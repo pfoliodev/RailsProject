@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   	  redirect_to posts_path, success: "Article modifie avec succes"
     else
       render 'edit'
-    end 
+    end
   end
 
   def create
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-  	params.require(:post).permit(:title, :content)
+  	params.require(:post).permit(:title, :content, :slug)
   end
 
   def set_post
