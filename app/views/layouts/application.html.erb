@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsProject</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  	<a class="navbar-brand" href="<%= root_path %>">Ruby on Rails</a>
+  	<ul class="nav navbar-nav">
+	  	<li class="nav-item">
+        <a class="nav-link" href="<%= posts_path %>">Articles</a>
+        <a class="nav-link" href="<%= categories_path %>">Catégories</a>
+        <a class="nav-link" href="<%= news_path %>">News</a>
+        <a class="nav-link" href="<%= front_path %>">Front-End</a>
+        <a class="nav-link" href="<%= back_path %>">Back-End</a>
+	  		<a class="nav-link" href="<%= real_path %>">Réalisation</a>
+	  	</li>
+  	</ul>
+  </nav>
+  <div class="container" style="padding-top: 5rem;">
+
+  <% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>"><%= msg %></div>
+  <% end %>
+    <%= yield %>
+  </div>
+  </body>
+</html>

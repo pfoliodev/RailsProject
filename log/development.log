@@ -1,0 +1,88 @@
+Started PATCH "/posts/2" for ::1 at 2017-01-25 13:04:57 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (18.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/iDFPDIwnlgVMfoam8e1AECajy56f4jZ19Q7lgrToNnIvL75gdDlr0nCNHeUe33EsgihOWTOSitg2c/mwuf0Yg==", "post"=>{"title"=>"Ruby on Rails", "content"=>"Les tutos Ruby on Rails"}, "id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Ruby on Rails' AND (`posts`.`id` != 2) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 175ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-25 13:05:00 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1298ms (Views: 1295.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2017-01-25 13:05:06 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Formation ROR' AND (`posts`.`id` != 1) LIMIT 1[0m
+  Rendered posts/edit.html.erb within layouts/application (122.5ms)
+Completed 200 OK in 154ms (Views: 147.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/posts/1" for ::1 at 2017-01-25 13:05:07 +0100
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ASXfexNPFKHfLOrjr7RkP475BwSLx6rW5Do4LrHX9jfb9vFyF4e2znAwWhcrNz44JqxQ9H+UMi5bPfQ6MOkpw==", "post"=>{"title"=>"Formation ROR", "content"=>"CRUD"}, "id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Formation ROR' AND (`posts`.`id` != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-25 13:05:07 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2/edit" for ::1 at 2017-01-25 13:05:08 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Ruby on Rails' AND (`posts`.`id` != 2) LIMIT 1[0m
+  Rendered posts/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/posts/2" for ::1 at 2017-01-25 13:05:10 +0100
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1/ZIRQ9vaNlq4LcT7avvwqTejKbnUWt9vG+uU4NfKiDhajOAvI8TLjYTeX7iFycGVkyisfngqY8LYlojS2t+mw==", "post"=>{"title"=>"Ruby on Rails", "content"=>"Les tutos Ruby on Rails"}, "id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Ruby on Rails' AND (`posts`.`id` != 2) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-25 13:05:10 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2017-01-25 13:05:12 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mPost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Formation ROR' AND (`posts`.`id` != 1) LIMIT 1[0m
+  Rendered posts/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.8ms)
+
+
