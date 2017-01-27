@@ -30,13 +30,13 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:name, :slug)
+    params.require(:category).permit(:title, :slug)
   end
 
   def set_category
