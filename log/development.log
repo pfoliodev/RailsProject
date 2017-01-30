@@ -2482,3 +2482,171 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4475467841591330430', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddCategoryToPost (20170127150429)
+  [1m[35m (184.6ms)[0m  [1m[35mALTER TABLE `posts` ADD `category_id` int[0m
+  [1m[35m (251.9ms)[0m  [1m[35mCREATE  INDEX `index_posts_on_category_id`  ON `posts` (`category_id`) [0m
+  [1m[35m (238.7ms)[0m  [1m[35mALTER TABLE `posts` ADD CONSTRAINT `fk_rails_9b1b26f040`
+FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170127150429')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4475467841591330430')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `categories`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'categories'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `posts`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'posts'[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Ruby on Rails' AND (`posts`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `posts` SET `category_id` = 1 WHERE `posts`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`title` = BINARY 'Demo' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `slug`) VALUES ('Demo', 'demo')[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Ruby on Rails' AND (`posts`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `posts` SET `category_id` = 3 WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` ORDER BY `posts`.`id` DESC LIMIT 1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Un article pour tester le slug' AND (`posts`.`id` != 5) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `posts` SET `category_id` = 2 WHERE `posts`.`id` = 5[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` ORDER BY `categories`.`id` DESC LIMIT 1[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`category_id` = 3[0m
+Started GET "/" for ::1 at 2017-01-30 14:54:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1172ms (Views: 1126.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-30 14:54:16 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3[0m
+  Rendered posts/index.html.erb within layouts/application (175.3ms)
+Completed 200 OK in 362ms (Views: 202.3ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-01-30 14:54:19 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (125.3ms)
+Completed 200 OK in 211ms (Views: 145.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2017-01-30 14:54:59 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ozqr0oLjoKP+8QL3QhMOG1LIX8+XXa8eg7GSGxtVQ7wEk/S1OgHkj4fL39SKdE2FRQe+OlknXUjoMyiIee4yvA==", "post"=>{"title"=>"Nouveau membre sur le site", "content"=>"Le stagiaire"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Nouveau membre sur le site' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `content`) VALUES ('Nouveau membre sur le site', 'Le stagiaire')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Nouveau membre sur le site' AND (`posts`.`id` != 7) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `posts` WHERE `posts`.`title` = BINARY 'Nouveau membre sur le site' AND (`posts`.`id` != 7) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 84ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/7" for ::1 at 2017-01-30 14:54:59 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-30 14:55:00 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3[0m
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 23.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories" for ::1 at 2017-01-30 14:55:06 +0100
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  Rendered categories/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-30 14:55:09 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3[0m
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for ::1 at 2017-01-30 14:57:29 +0100
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  Rendered categories/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-30 14:57:35 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3[0m
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/front" for ::1 at 2017-01-30 14:57:40 +0100
+Processing by PagesController#front as HTML
+  Rendering pages/front.html.erb within layouts/application
+  Rendered pages/front.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/news" for ::1 at 2017-01-30 14:57:41 +0100
+Processing by PagesController#news as HTML
+  Rendering pages/news.html.erb within layouts/application
+  Rendered pages/news.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2017-01-30 14:57:41 +0100
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  Rendered categories/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for ::1 at 2017-01-30 14:57:43 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3[0m
+  Rendered posts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.8ms)
+
+

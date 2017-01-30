@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:update, :edit, :show, :destroy]
 
   def index
-    session[:user_id] = 4
-  	@posts = Post.all
+  	@posts = Post.includes(:category).all
   end
 
   def show
