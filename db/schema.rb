@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127150429) do
+ActiveRecord::Schema.define(version: 20170207160800) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -18,10 +18,14 @@ ActiveRecord::Schema.define(version: 20170127150429) do
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "title"
-    t.text    "content",     limit: 65535
-    t.string  "slug"
-    t.integer "category_id"
+    t.string   "title"
+    t.text     "content",            limit: 65535
+    t.string   "slug"
+    t.integer  "category_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
   end
 

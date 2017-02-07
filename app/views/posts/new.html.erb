@@ -8,7 +8,13 @@
 	</div>
 <% end %>
 
-<%= form_for @post do |f| %>
+<%= form_for @post, html: {multipart:true} do |f| %>
+
+	<div class="form-group">
+	<label>Image de l'article</label>
+	<%= f.file_field :image %>
+	<div>
+
 	<div class="form-group">
 	<label>Titre de l'article</label>
 	<%= f.text_field :title, class: 'form-control' %>

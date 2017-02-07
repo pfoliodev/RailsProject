@@ -1,6 +1,7 @@
 <h1>Articles</h1>
 
 <% @posts.each do |post| %>
+  <h2><%= image_tag post.image.url(:thumb) %></h2>
 	<h2><%= post.title %></h2>
 	<p><%= post.content %></p>
 	<% if post.category %>
