@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-
+	belongs_to :user
 	include Sluggable
 	belongs_to :category, optional:true
 	validates :title, presence: { message: 'ne doit pas etre vide'}

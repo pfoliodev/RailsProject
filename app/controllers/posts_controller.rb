@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:update, :edit, :show, :destroy]
+  before_action :authenticate_user!, except: [:edit]
 
   def index
   	@posts = Post.includes(:category).all
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def new
-  	@post = Post.new
+  	@post = current_user.posts.build
   end
 
   def update
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def create
-  	post = Post.create(post_params)
+  	post = current_user.posts.build(post_params)
     if post.valid?
       post.save
   	  redirect_to post_path(post.id), success: "Article creer avec succes"

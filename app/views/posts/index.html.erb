@@ -3,7 +3,9 @@
 <% @posts.each do |post| %>
   <h2><%= image_tag post.image.url(:thumb) %></h2>
 	<h2><%= post.title %></h2>
+  <p><%= post.user.email %></p>
 	<p><%= post.content %></p>
+
 	<% if post.category %>
 	<p>
 		Categorie : <%= post.category.title %>
@@ -11,8 +13,10 @@
 	<% end %>
 	<p>
 	<a href="<%= post_path(post.id) %>" class="btn btn-primary">Lire la suite</a>
+  <% if post.user == current_user %>
 	<a href="<%= edit_post_path(post.id) %>" class="btn btn-default">Editer l'article</a>
 	<a href="<%= post_path(post.id) %>" class="btn btn-danger" data-method="DELETE"> Supprimer</a>
+  <% end %>
 	</p>
 <% end %>
 
