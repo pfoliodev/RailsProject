@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:update, :edit, :show, :destroy]
-  before_action :authenticate_user!, except: [:edit]
 
   def index
   	@posts = Post.includes(:category).all
@@ -19,7 +18,7 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
-  	  redirect_to posts_path, success: "Article modifie avec succes"
+  	  redirect_to posts_path, success: "Article modifié avec succès"
     else
       render 'edit'
     end
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
   	post = current_user.posts.build(post_params)
     if post.valid?
       post.save
-  	  redirect_to post_path(post.id), success: "Article creer avec succes"
+  	  redirect_to post_path(post.id), success: "Article créer avec succès"
     else
       @post = post
       render 'new'
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
 
   def destroy
   	@post.destroy
-  	redirect_to posts_path, success: "Article supprime avec succes"
+  	redirect_to posts_path, success: "Article supprimé avec succès"
   end
   private
 
