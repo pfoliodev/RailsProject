@@ -24,6 +24,9 @@ gem 'coffee-rails', '~> 4.2'
 #devise for authentication
 gem 'devise', '~> 4.2'
 
+#admin gem
+gem "rails_admin"
+
 #paperclip gem for images
 gem "paperclip", "~> 5.0.0"
 
